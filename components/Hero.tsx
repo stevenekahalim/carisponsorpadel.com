@@ -59,13 +59,18 @@ export default function Hero() {
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-premium-navy/90 to-premium-navy/70 z-10" />
-          <img
-            src="https://via.placeholder.com/1920x1080/1E3A5F/FFFFFF?text=Padel+Court"
-            alt="Padel Court Background"
-            className="w-full h-full object-cover"
+        {/* Background Gradient - Professional look without external image dependency */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-premium-navy via-premium-navy to-padel-green">
+          <div className="absolute inset-0 opacity-10"
+            style={{
+              backgroundImage: `repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,.03) 10px,
+                rgba(255,255,255,.03) 20px
+              )`
+            }}
           />
         </div>
 

@@ -6,14 +6,14 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 export default function VenueShowcase() {
   const venues = [
-    { name: 'Kemang Padel Club', city: 'Jakarta', courts: 4, image: 'https://via.placeholder.com/400x300/00B140/FFFFFF?text=Kemang+Padel' },
-    { name: 'Surabaya Padel Center', city: 'Surabaya', courts: 6, image: 'https://via.placeholder.com/400x300/1E3A5F/FFFFFF?text=Surabaya+Padel' },
-    { name: 'Bali Padel Paradise', city: 'Bali', courts: 5, image: 'https://via.placeholder.com/400x300/00B140/FFFFFF?text=Bali+Padel' },
-    { name: 'Bandung Elite Padel', city: 'Bandung', courts: 4, image: 'https://via.placeholder.com/400x300/1E3A5F/FFFFFF?text=Bandung+Padel' },
-    { name: 'Medan Padel Arena', city: 'Medan', courts: 3, image: 'https://via.placeholder.com/400x300/00B140/FFFFFF?text=Medan+Padel' },
-    { name: 'Yogyakarta Padel House', city: 'Yogyakarta', courts: 4, image: 'https://via.placeholder.com/400x300/1E3A5F/FFFFFF?text=Yogya+Padel' },
-    { name: 'Semarang Padel Club', city: 'Semarang', courts: 3, image: 'https://via.placeholder.com/400x300/00B140/FFFFFF?text=Semarang+Padel' },
-    { name: 'Makassar Padel Court', city: 'Makassar', courts: 4, image: 'https://via.placeholder.com/400x300/1E3A5F/FFFFFF?text=Makassar+Padel' },
+    { name: 'Kemang Padel Club', city: 'Jakarta', courts: 4, bgColor: 'from-padel-green to-emerald-600' },
+    { name: 'Surabaya Padel Center', city: 'Surabaya', courts: 6, bgColor: 'from-premium-navy to-blue-800' },
+    { name: 'Bali Padel Paradise', city: 'Bali', courts: 5, bgColor: 'from-action-orange to-orange-600' },
+    { name: 'Bandung Elite Padel', city: 'Bandung', courts: 4, bgColor: 'from-padel-green to-teal-600' },
+    { name: 'Medan Padel Arena', city: 'Medan', courts: 3, bgColor: 'from-premium-navy to-indigo-800' },
+    { name: 'Yogyakarta Padel House', city: 'Yogyakarta', courts: 4, bgColor: 'from-action-orange to-red-600' },
+    { name: 'Semarang Padel Club', city: 'Semarang', courts: 3, bgColor: 'from-padel-green to-green-700' },
+    { name: 'Makassar Padel Court', city: 'Makassar', courts: 4, bgColor: 'from-premium-navy to-slate-800' },
   ]
 
   return (
@@ -53,11 +53,12 @@ export default function VenueShowcase() {
                 >
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <div className="aspect-video relative overflow-hidden">
-                      <img
-                        src={venue.image}
-                        alt={venue.name}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
+                      <div className={`w-full h-full bg-gradient-to-br ${venue.bgColor} flex items-center justify-center`}>
+                        <div className="text-white text-center p-4">
+                          <div className="text-2xl font-bold mb-2">{venue.name}</div>
+                          <div className="text-sm opacity-90">{venue.city}</div>
+                        </div>
+                      </div>
                     </div>
                     <div className="p-4">
                       <h3 className="font-bold text-lg text-premium-navy mb-2">
